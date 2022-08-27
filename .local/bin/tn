@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ $# -eq 1 ]; then
+    selected=$1
+else
+	selected="$(find $PROJECTS -maxdepth 2 -type d |
+		awk NR\>1 |
+		fzf)"
+
+fi
+
+if [ -z $selected ]; then
+    exit 0
+fi
+
+name="$(echo $selected | sed "s-$PROJECTS--")"
+tmux_running="$(pgrep tmux)"
+
+if [ -z $TMUX ] && [ -z $tmux_running ]; then
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+if ! tmux has-session -t=$name 2> /dev/null; then
+    tmux new-session -ds $name -c $selected
+fi
+
+tmux switch-client -t $name

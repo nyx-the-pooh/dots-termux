@@ -1,0 +1,18 @@
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	mkd="mkdir -pv" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ip="ip -color=auto"
+
+# Dotfile manager
+alias dotm="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"

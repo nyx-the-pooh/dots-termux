@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Default programs
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# $HOME clean-up
+
+## XDG variables
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_RUNTIME_DIR="/data/data/com.termux/files/usr/tmp/"
+
+## XDG_CONFIG_HOME
+export WGETRC="${XDG_CONFIG_HOME:-$HOME/.config}/wget/wgetrc"
+
+## XDG_DATA_HOME
+export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
+export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/history"
+
+## XDG_CACHE_HOME
+
+## XDG_RUNTIME_DIR
+export TMUX_TMPDIR="$XDG_RUNTIME_DIR"
+
+## None
+export LESSHISTFILE="-"
+
+
+# Variables for personal scripts
+export PROJECTS="$HOME/code/projects/"
