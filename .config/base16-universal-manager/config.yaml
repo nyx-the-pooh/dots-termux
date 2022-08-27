@@ -1,0 +1,30 @@
+GithubToken: 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
+
+Colorscheme: gruvbox-dark-hard
+
+applications:
+
+  nvim:
+    enabled: true
+    files:
+      default:
+        path: ~/.config/nvim/colors/base16.lua
+        mode: replace
+        start_marker: '-- <<<<<<<<<<'
+        end_marker: '-- >>>>>>>>>>'
+
+  tmux:
+    enabled: true
+    hook: tmux source-file /data/data/com.termux/files/home/.config/tmux/tmux-base16.conf
+    files:
+      default:
+        path: ~/.config/tmux/tmux-base16.conf
+        mode: rewrite
+
+  termux:
+    enabled: true
+    hook: termux-reload-settings
+    files:
+      default-256:
+        path: ~/.termux/colors.properties
+        mode: rewrite
