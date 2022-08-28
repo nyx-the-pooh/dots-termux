@@ -30,7 +30,7 @@ augroup('setIndent', { clear = true })
 autocmd('Filetype', {
   group = 'setIndent',
   pattern = { 'xml', 'html', 'xhtml', 'css', 'scss'},
-  command = 'setlocal expandtab=true shiftwidth=2 tabstop=2'
+  command = 'setlocal shiftwidth=2 tabstop=2'
 })
 
 
